@@ -13,7 +13,6 @@ const Layout = ({ pageTitle, children }) => {
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">About</Link></li>
-                    <li><Link to="/test">Test</Link></li>
                 </ul>
             </nav>
             <h1 className={heading}>{pageTitle}</h1>

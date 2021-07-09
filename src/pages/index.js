@@ -1,6 +1,7 @@
 // import needed stuff
 import * as React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import Layout from '../components/layout'
 
 // define component with props
 const Article = ({ title, description }) => {
@@ -32,7 +33,7 @@ const IndexPage = () => {
   // render the component using props
   // pulled from strapi data layer 
   return (
-    <main>
+    <Layout pageTitle="Home Page">
       <ul>
         {
           data.allStrapiArticle.nodes.map(article => (
@@ -45,7 +46,7 @@ const IndexPage = () => {
           ))
         }
       </ul>
-    </main>
+      </Layout>
   )
 }
 

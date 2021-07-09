@@ -10,7 +10,6 @@ module.exports = {
         apiURL: process.env.DEPLOY_URL
           ? "https://strapi-deployed-on-heroku.herokuapp.com" // production environement
           : "http://localhost:1337", // developement environement
-        // apiURL: `http://localhost:1337`, // default
         queryLimit: 1000,
         collectionTypes: [`article`, `user`], // modify 🍋
         singleTypes: [], // modify 🍓
