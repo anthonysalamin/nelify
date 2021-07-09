@@ -2,6 +2,11 @@ node_modules/
 .cache/
 public
 
+############################
+# "because it creates issues..."
+###########################
+
 package-lock.json
+
 # Local Netlify folder
 .netlify

@@ -6,7 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 const Article = ({ title, description }) => {
   return (
     <div>
-       <h1>{title}</h1>
+      <h1>{title}</h1>
       <p>{description}</p>
     </div>
   )
@@ -17,7 +17,7 @@ const IndexPage = () => {
 
   // get data from strapi
   const data = useStaticQuery(graphql`
-  query MyQuery {
+  query articles {
     allStrapiArticle {
       nodes {
         id
