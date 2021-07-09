@@ -20,7 +20,7 @@ const IndexPage = () => {
   // get data from strapi
   const data = useStaticQuery(graphql`
   query ArticlesInfo {
-    allStrapiArticle(sort: {fields: id, order: DESC}) {
+    allStrapiArticle(sort: {fields: id, order: ASC}) {
       nodes {
         title
         description
