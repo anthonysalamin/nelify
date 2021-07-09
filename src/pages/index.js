@@ -4,11 +4,12 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Layout from '../components/layout'
 
 // define component with props
-const Article = ({ title, description }) => {
+const Article = ({ title, description, id }) => {
   return (
     <div>
       <h1>{title}</h1>
       <p>{description}</p>
+      <p>{id}</p>
     </div>
   )
 }
@@ -18,15 +19,15 @@ const IndexPage = () => {
 
   // get data from strapi
   const data = useStaticQuery(graphql`
-  query articles {
-    allStrapiArticle {
+  query ArticlesInfo {
+    allStrapiArticle(sort: {fields: id, order: DESC}) {
       nodes {
-        id
         title
         description
+        id
       }
     }
-  }
+  }  
   `
   )
 
@@ -41,12 +42,13 @@ const IndexPage = () => {
               <Article
                 title={article.title}
                 description={article.description}
+                id={article.id}
               />
             </li>
           ))
         }
       </ul>
-      </Layout>
+    </Layout>
   )
 }
 
